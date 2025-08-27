@@ -1695,7 +1695,7 @@ class BaseDataset(torch.utils.data.Dataset):
         return example
 
     def get_item_for_caching(self, bucket, bucket_batch_size, image_index):
-        captions = []
+        caption = lines[0].strip() if lines else ""  # handle empty files
         images = []
         input_ids1_list = []
         input_ids2_list = []
